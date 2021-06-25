@@ -3,7 +3,7 @@ User Function GERSXDB()
 Local aLinha := {}
 aTables := {}
 
-OpenSM0()
+MyOpenSM0()
 
 
 lCpyLocal := MsgYesNo("Deseja copiar o(s) pacote(s) gerado para [C:\TEMP\QUERY] ?")
@@ -31,7 +31,7 @@ If File("\query\config.txt")
 	FClose(nHdl)
 EndIf
 					
-MsAguarde({|| RunProc() }, "Geração pacote de instalação", "Processando tabelas. Aguarde....", .T.)
+MsAguarde({|| RunProc() }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Processando tabelas. Aguarde....", .T.)
 
 Alert("Pacote(s) gerado(s) na pasta [\query] com sucesso !!")
 
@@ -41,7 +41,6 @@ Static Function RunProc
 
 Local cSXB     := cSX5 := cSXG := ""
 Local nTables := 0 
-Local nPos 	  := 1
 
 For nTables := 1 To Len(aTables)
 	__PACOTE := aTables[nTables][1]
@@ -71,39 +70,39 @@ For nTables := 1 To Len(aTables)
 	Ferase(__DIR + "sxg.dbf")
 	Ferase(__DIR + "sxv.dbf")
 	
-	MsAguarde({|| GerSX1(@cSXB,@cSX5) }, "Geração pacote de instalação", "Gerando [" + __DIR + "sx1.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSX1(@cSXB,@cSX5) }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sx1.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 
-	MsAguarde({|| GerSX2() }, "Geração pacote de instalação", "Gerando [" + __DIR + "sx2.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSX2() }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sx2.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 	
-	MsAguarde({|| GerSX3(@cSXB,@cSX5,@cSXG) }, "Geração pacote de instalação", "Gerando [" + __DIR + "sx3.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSX3(@cSXB,@cSX5,@cSXG) }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sx3.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 
-	MsAguarde({|| GerSX5(cSX5) }, "Geração pacote de instalação", "Gerando [" + __DIR + "sx5.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSX5(cSX5) }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sx5.dbf]. Aguarde....", .T.)
 	ProcessMessage()
-	MsAguarde({|| GerSX6() }, "Geração pacote de instalação", "Gerando [" + __DIR + "sx6.dbf]. Aguarde....", .T.)
-	ProcessMessage()
-
-	MsAguarde({|| GerSIX() }, "Geração pacote de instalação", "Gerando [" + __DIR + "six.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSX6() }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sx6.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 
-	MsAguarde({|| GerSX7() }, "Geração pacote de instalação", "Gerando [" + __DIR + "sx7.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSIX() }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "six.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 
-	MsAguarde({|| GerSX9() }, "Geração pacote de instalação", "Gerando [" + __DIR + "sx9.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSX7() }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sx7.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 
-	MsAguarde({|| GerSXA() }, "Geração pacote de instalação", "Gerando [" + __DIR + "sxa.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSX9() }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sx9.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 
-	MsAguarde({|| GerSXB(cSXB) }, "Geração pacote de instalação", "Gerando [" + __DIR + "sxb.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSXA() }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sxa.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 
-	MsAguarde({|| GerSXG(cSXG) }, "Geração pacote de instalação", "Gerando [" + __DIR + "sxg.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSXB(cSXB) }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sxb.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 
-	MsAguarde({|| GerSXV() }, "Geração pacote de instalação", "Gerando [" + __DIR + "sxv.dbf]. Aguarde....", .T.)
+	MsAguarde({|| GerSXG(cSXG) }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sxg.dbf]. Aguarde....", .T.)
+	ProcessMessage()
+
+	MsAguarde({|| GerSXV() }, "GeraÃ§Ã£o pacote de instalaÃ§Ã£o", "Gerando [" + __DIR + "sxv.dbf]. Aguarde....", .T.)
 	ProcessMessage()
 Next
 
@@ -156,6 +155,7 @@ Static Function GerSX2()
 Local cFile   := __DIR + "sx2.dbf"
 Local cFilter :=""
 
+
 DbSelectArea("sx2")
 DbSetOrder(1)
 
@@ -164,7 +164,7 @@ DbGoTop()
 
 // Copia dos dados da tabela
 While ! Eof()
-	DbSelectArea("SX2")
+	DbSelectArea("SX3")
 	DbSeek(SX2->X2_CHAVE)
 	cFL_FILIAL := SX3->X3_CAMPO
 
@@ -475,7 +475,8 @@ If ! File(cFile)
 	Return .T.
 EndIf
 
-use &(cFile) new alias "CSV" via "CTREECDX"
+	use &(cFile) new alias "CSV" via "CTREECDX"
+
 While ! Eof()
 	cCampo := ""
 	For nField := 1 To FCount()
@@ -519,3 +520,17 @@ Abertura do arquivo SIGAMAT.EMP quando necessÃ¡rio
 /*/
 //-------------------------------------------------------------------------
 
+Static Function MyOpenSM0()
+
+If Select("SM0") > 0
+	Return
+EndIf
+
+	Set Dele On
+	dbUseArea( .T., , 'SIGAMAT.EMP', 'SM0', .T., .F. )
+	dbSetIndex( 'SIGAMAT.IND' )
+
+	RpcSetType( 3 )
+	RpcSetEnv( SM0->M0_CODIGO, SM0->M0_CODFIL )
+
+Return
